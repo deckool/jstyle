@@ -8,15 +8,17 @@
 	<script>
 		jstyle.setVars({
 			//   Variables
+			lightborder:'solid 1px #EFEEE6',
+			reda:'rgba(255,0,51,0.5)',
+			pink:'rgb(255,0,51)',
+			darkblue:'rgb(27,27,36)',
+			lightdarkblue:'rgb(41,38,77)',
+			lightblue:'rgb(201,195,230)',
 			mozborder:'-moz-border-radius',
 			webkitborder:'-webkit-border-radius',
-			mozshadow:'-moz-text-shadow',
-			webkitshadow:'-webkit-text-shadow',
-			shadow:'1px 1px 2px #000',
 			radius:'10px',
 			font:'Helvetica,Arial,sans-serif',
-			main:'rgb(201,195,230)',
-			space:'1em',
+			space:'0.5em',
 			// assign a value by a function
 			mainLight:function(){
 				// css is a reference to this json itself
@@ -29,35 +31,46 @@
 		//	to overcome this, place the property name between quotes/double quotes
 			'body':{
 				font:'14px $font',
-				background:'rgb(41,38,77)',
-				color:'$main',
-				'$mozshadow':'$shadow',
-				'$webkitshadow': '$shadow',
-				'text-shadow': '$shadow',
+				background:'$lightdarkblue',
+				'line-height':'1.5'
 			},
 			'.text':{
-				width:'45%',
-				'$mozborder':'$radius',
-				'border-radius':'$radius',
-				'$webkitborder':'$radius',
+				width:'15%',
 				padding:'$space',
-				margin:'$space'
+				margin:'$space',
+				'float':'left'
 			},
 			'.left':{
-				'float':'left',
-				background:'rgba(255,0,102,0.5)'
+				background:'white',
+				color:'$reda',
+				border:'$lightborder'
 			},
 			'.right':{
-				'float':'right',
-				background:'rgba(27,27,36,0.5)' //normal assignment (no variable)
+				background:'$darkblue',
+				color:'$lightblue'
+			},
+			'h1': {
+				margin:'$space',
+				color:'$lightblue'
+			},
+			'a':{
+				'text-decoration':'none',
+				color:'white',
+				'background-color':'#ff0033'
+			},
+			'.invert': {
+				color:'$lightdarkblue',
+				background:'$lightblue'
 			}
 		});
-		// example below on how to load a static css from a file - disabled 
-		// jstyle().addLink('http://beebole-apps.com/themes/theme.css')
 	</script>
 </head>
 <body>
+<h1>Jstyle</h1>
 <div class="text left">
+Hello Wrrld ! This is a test page of a jscss styled in json using variables from js language. It stores variable with given css properties and make use of them in a 
+</div>
+<div class="text invert">
 Hello Wrrld ! This is a test page of a jscss styled in json using variables from js language. It stores variable with given css properties and make use of them in a 
 </div>
 <div class="text right">Hello Wrrld ! This is a test page of a jscss styled in json using variables from js language. It stores variable with given css properties and make use of them in a css json like written. These colors are from Heroku btw. I like the half night theme.
